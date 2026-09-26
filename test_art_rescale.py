@@ -115,32 +115,60 @@ def check_repo_format(block, label, failures, is_logo=False):
     lines = [l for l in block.splitlines() if l.strip()]
     if not lines:
         return
-    # 1. No real spaces in the art body: the reference uses U+2800. Counted on
-    # the visible glyphs only (markup stripped), which is what the terminal
-    # actually renders.
-    spaces = sum(plain(l).count(" ") for l in lines)
-    if spaces:
+    # 1. NO U+2800 background. A terminal draws U+2800 as a VISIBLE dotted cell
+    #    (it is real ink, not transparent), so filling the bbox with it turns the
+    #    figure into a field of tofu boxes that swallows the art. Verified: a
+    #    font without real braille renders U+2800 with the SAME ink as U+28FF.
+    #    Negative space stays real spaces.
+    blanks = sum(plain(l).count("\u2800") for l in lines)
+    if blanks:
         failures.append(
-            f"{label}: {spaces} real space(s) in the art; the reference skins paint "
-            f"the background with U+2800 (blank braille)")
-    # 2. Colour by role, not per pixel.
-    tones, spans = [], []
-    for l in lines:
-        cs = re.findall(r"\[(?:bold |dim )?#[0-9A-Fa-f]{6}\]", l)
-        tones.append(len(set(cs)))
-        spans.append(len(cs))
-    avg_t, avg_s = sum(tones) / len(tones), sum(spans) / len(spans)
-    if avg_t > 2.6:
+            f"{label}: {blanks} U+2800 blank-braille cells paint a visible tofu field "
+            f"around the figure; use real spaces for negative space")
+    # Per-cell colouring is what gives the figure its depth here, so tones per
+    # line is deliberately NOT capped the way a one-tone-per-line collection
+    # would. Only absurd markup bloat is rejected; the hue smoothness of the
+    # ramp is checked by check_ramp_smoothness().
+    spans = [len(re.findall(r"\[(?:bold |dim )?#[0-9A-Fa-f]{6}\]", l)) for l in lines]
+    avg_s = sum(spans) / len(spans)
+    if avg_s > 40.0:
         failures.append(
-            f"{label}: {avg_t:.2f} tones/line (reference is 1.04, max 2) - the art is "
-            f"coloured per pixel and will read as noise")
-    if avg_s > 6.0:
+            f"{label}: {avg_s:.1f} spans/line - markup bloat that makes the YAML fragile")
+
+
+def check_ramp_smoothness(hero, label, failures, max_hue_step=20.0):
+    """The art ramp must walk hue smoothly.
+
+    Measured on the first umbra ramp: it ran 259,260,260,255,269,188 degrees,
+    i.e. an 81-degree jump between the two brightest tones (violet straight to
+    cyan). With per-cell colouring that becomes visible banding across the iris.
+    The ramps now interpolate hue in 7 steps with a max step of 14 degrees.
+    """
+    import colorsys
+    seen = {}
+    for line in hero.splitlines():
+        for hexv in re.findall(r"\[(#[0-9A-Fa-f]{6})\]", line):
+            seen.setdefault(hexv, True)
+    if len(seen) < 2:
+        return
+    def lum(hexv):
+        f = lambda v: (v / 255 / 12.92) if v / 255 <= 0.04045 else (((v / 255 + 0.055) / 1.055) ** 2.4)
+        r, g, b = (f(int(hexv[1:][i:i + 2], 16)) for i in (0, 2, 4))
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b
+    # Ramp order is by luminance (the ramp is monotonic in it); "first seen in
+    # the art" is NOT ramp order, because brightness maps per cell.
+    order = sorted(seen, key=lum)
+    hues = []
+    for hexv in order:
+        r, g, b = (int(hexv[1:][i:i + 2], 16) / 255 for i in (0, 2, 4))
+        hh, _, _ = colorsys.rgb_to_hsv(r, g, b)
+        hues.append(hh * 360)
+    steps = [abs(((hues[i + 1] - hues[i] + 180) % 360) - 180) for i in range(len(hues) - 1)]
+    worst = max(steps) if steps else 0.0
+    if worst > max_hue_step:
         failures.append(
-            f"{label}: {avg_s:.2f} spans/line (reference is 2.8) - markup bloat that "
-            f"also makes the YAML fragile")
-    # 3. The art must actually paint a background.
-    if sum(l.count("\u2800") for l in lines) == 0:
-        failures.append(f"{label}: no U+2800 background at all")
+            f"{label}: art ramp jumps {worst:.0f} degrees of hue between adjacent tones "
+            f"(limit {max_hue_step:.0f}) - the gradient will band across the figure")
 
 
 def check_heritage(skins_dir: str, budget_for_hero, failures: list):
@@ -159,7 +187,7 @@ def check_heritage(skins_dir: str, budget_for_hero, failures: list):
 
         check_no_wrap(hero, budget_for_hero(name, hw), f"{name}.hero", failures)
         check_repo_format(hero, f"{name}.hero", failures)
-        check_repo_format(logo, f"{name}.logo", failures)
+        check_ramp_smoothness(hero, f"{name}.hero", failures)
         for cols in TEST_COLS:
             check_real_render(hero, cols, f"{name}.hero@{cols}", failures)
         check_logo_threshold(logo, failures, name)

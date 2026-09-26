@@ -107,6 +107,60 @@ colour fade.
 
 ---
 
+## The ASCII conventions (and one that is wrong)
+
+`test_art_rescale.py` enforces two things that a naive generator gets wrong.
+
+**1. Colour the ramp smoothly, per cell.** The first umbra ramp ran
+`259,260,260,255,269,188` degrees of hue — an **81-degree jump** between the two
+brightest tones (violet straight to cyan). With per-cell colouring that becomes
+visible banding across the iris. The ramps now interpolate hue in 7 steps with a
+**max step of 14 degrees**, and the test fails any ramp that jumps more than 20.
+
+**2. Do NOT paint the background with U+2800.** Several popular skins fill the
+figure's bounding box with `U+2800` (blank braille). A terminal draws U+2800 as
+a **visible dotted cell** — it is real ink, not transparent space — so the figure
+ends up inside a field of placeholder boxes. Verified directly: in a font without
+real braille, U+2800 renders with *exactly the same* ink as U+28FF (a tofu box).
+
+Negative space is therefore real spaces, and the hero is cropped to the figure's
+real bounding box (22-46 columns) instead of padded out to a rectangle.
+
+Each skin signs its art with a letter-spaced tagline in the dim tone
+(`♥ u m b r a`, `◆ q u e r y`) and a `welcome` greeting faded per character.
+
+---
+
+## Why the art breaks (and how the tests catch it)
+
+`banner_hero` and `banner_logo` are not free-form. In `hermes_cli/banner.py`:
+
+* `banner_logo` prints **only** when the terminal is **>= 95 columns**, above the
+  panel.
+* `banner_hero` is pasted into a `Table` row (line 1019) inside a
+  `Panel(padding=(0, 2))`, sharing the row with a right-hand column of
+  model/cwd/tool lines.
+
+So a hero line wider than ~46 columns gets **wrapped by Rich, shearing the figure
+in half** — no error, just a ruined drawing. And a logo wider than the panel is
+silently clipped. Braille is 2x4 dots per cell, so a wordmark drawn as braille
+*dots* is illegible at wordmark size; these use the solid `█` block family.
+
+`test_art_rescale.py` enforces all of it:
+
+```bash
+python3 test_art_rescale.py            # test the repo's skins/
+python3 test_art_rescale.py /tmp/out   # test freshly generated output
+```
+
+It measures every art line with `rich.cells.cell_len` (markup excluded), renders
+each skin for real at **80, 95, 100, 120 and 160 columns**, and fails if Rich
+would wrap or clip anything, if a logo is missing or too wide for the 95-column
+threshold, if branding is incomplete, or if the greeting has no per-character
+colour fade.
+
+---
+
 ## The ASCII conventions (reverse-engineered)
 
 Every skin in the reference collection follows three rules that a naive

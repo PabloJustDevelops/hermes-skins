@@ -154,14 +154,18 @@ def art_umbra(a: Art):
     a.disc(cx, cy, ir * 0.27, 0.0, soft=0.10)         # dark pupil
     a.disc(cx - ir * 0.34, cy - ir * 0.36, ir * 0.12, 1.0, soft=0.25)   # catchlight
 
-    # Reticle brackets + frame (cyan), and upper-lid crease for the "eyelid" cue.
-    a.frame(cx - A * 1.22, cy - B * 1.55, cx + A * 1.22, cy + B * 1.55, 0.18, tick=6, corner=0.8)
-    for s in (-1, 1):
-        a.line(cx + s * A * 1.10, cy - B * 1.05, cx + s * A * 1.10, cy + B * 1.05, 0.60, width=0.85)
-    a.polyline([(cx - A * 0.72, cy - B * 1.30), (cx, cy - B * 1.62), (cx + A * 0.72, cy - B * 1.30)],
-               0.34, width=0.6)                      # upper crease
-    a.line(cx, cy - B * 1.55, cx, cy - B * 1.05, 0.7, width=0.7)
-    a.line(cx, cy + B * 1.05, cx, cy + B * 1.55, 0.7, width=0.7)
+    # Reticle: FOUR corner brackets only. A full frame with tick marks (the
+    # earlier version) left ghost contours and stray verticals all around the
+    # eye, which read as leftover debug strokes. Corners say "targeting" without
+    # competing with the lid.
+    bx, by = A * 1.16, B * 1.44
+    arm_x, arm_y = A * 0.30, B * 0.30
+    for sx in (-1, 1):
+        for sy in (-1, 1):
+            a.line(cx + sx * bx, cy + sy * by, cx + sx * (bx - arm_x), cy + sy * by, 0.55, width=0.9)
+            a.line(cx + sx * bx, cy + sy * by, cx + sx * bx, cy + sy * (by - arm_y), 0.55, width=0.9)
+    a.line(cx, cy - by, cx, cy - B * 1.05, 0.7, width=0.7)   # top tick
+    a.line(cx, cy + B * 1.05, cx, cy + by, 0.7, width=0.7)   # bottom tick
 
 
 def art_oracle(a: Art):
@@ -347,10 +351,10 @@ MOTIFS = {"umbra": art_umbra, "oracle": art_oracle, "neuro": art_neuro, "genesis
 # ------------------------------------------------------------------ palette
 
 RAMPS = {
-    "umbra":   ["#2A1B4A", "#4C2E8A", "#7C4DDB", "#A78BFA", "#E9D5FF", "#22D3EE"],
-    "oracle":  ["#04231C", "#0B4A38", "#12775A", "#1FBF87", "#5EE9B4", "#22D3EE"],
-    "neuro":   ["#2A0F2E", "#6B1F5C", "#B03A8C", "#E86BB0", "#F9B8DC", "#A78BFA"],
-    "genesis": ["#080B1E", "#1B2A5E", "#3559A8", "#5B87E0", "#A8C4FF", "#E0E7FF"],
+    "umbra":   ['#130345', '#0D0786', '#112CC2', '#3D78DF', '#89B9DD', '#BBD7E2', '#DBEDF0'],
+    "oracle":  ['#03452B', '#078661', '#11C29F', '#3DDFCF', '#89DDDD', '#BBDFE2', '#DBEDF0'],
+    "neuro":   ['#450327', '#860769', '#C211BF', '#BD3DDF', '#B889DD', '#CABBE2', '#E0DBF0'],
+    "genesis": ['#031845', '#073086', '#114AC2', '#3D72DF', '#89A5DD', '#BBC8E2', '#DBE2F0'],
 }
 
 SUBTITLES = {
