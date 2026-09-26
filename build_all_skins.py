@@ -8,6 +8,7 @@ leftmost lines sit at column 0, so hand-copying breaks the file. `yaml_art()`
 rebases every line on the first line's margin.
 """
 import os
+import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -126,32 +127,102 @@ def yaml_art(lines, indent="  "):
     return "\n".join(f"{indent}{ln[min(base, lead(ln)):]:}" for ln in body)
 
 
-def markup_lines(art, ramp):
+BLANK_BRAILLE = "\u2800"          # the reference skins paint the background with
+# Letter-spaced with U+2800, never with real spaces: the reference skins keep the
+# art body free of U+0020 so the background is a solid braille field.
+TAGLINES = {
+    "umbra": "\u2665\u2800u\u2800m\u2800b\u2800r\u2800a",
+    "oracle": "\u25c6\u2800q\u2800u\u2800e\u2800r\u2800y",
+    "neuro": "\u2663\u2800s\u2800y\u2800n\u2800a\u2800p\u2800s\u2800e",
+    "genesis": "\u2726\u2800p\u2800r\u2800o\u2800t\u2800o\u2800c\u2800o\u2800l",
+}
+
+
+def art_width_plain(lines):
+    from rich.cells import cell_len
+    import re as _re
+    return max((cell_len(_re.sub(r"\[/\\[a-z]*[^\\]]*\\]", "", l)) for l in lines), default=0)
+
+
+def markup_lines(art, ramp, line_style=None, bg_char=None):
+    r"""One Rich span per LINE, the way every skin in joeynyc/hermes-skins does it.
+
+    Measured across the 16 reference skins: 246 lines, mean 1.04 tones/line and
+    2.8 spans/line, 310/362 lines are a single `[color]...[/]` span, and the
+    background is U+2800 (blank braille), never a space. Per-cell spans read as
+    noise and cost ~9x the markup.
+
+    `bg_char` fills every unused cell with blank braille so the art keeps a solid
+    background; `line_style` sets the tone for the whole line.
+    """
     cells = to_cells(art, ramp)
     out = []
     for row in cells:
-        s = "".join((f"[{c}]{ch}[/]" if c else ch) for ch, c in row).rstrip()
-        if s:
-            out.append(s)
+        plain = "".join((bg_char or " ") if c is None else ch for ch, c in row).rstrip()
+        if not plain:
+            continue
+        if line_style is _split_row:
+            segs = _split_row(ramp, row)
+            if segs is None:
+                continue
+            buf = []
+            for a, b, tone in segs:
+                chunk = "".join((bg_char or " ") if c is None else ch
+                                for ch, c in row[a:b + 1])
+                if chunk.strip():
+                    buf.append(f"[{tone}]{chunk}[/]")
+            line = "".join(buf)
+            if line.strip():
+                out.append(line)
+            continue
+        tone = line_style(ramp, row) if line_style else ramp[-1]
+        out.append(f"[{tone}]{plain}[/]")
     return out
 
 
+def _split_row(ramp, row):
+    """Two spans per row: muted frame | bright figure.
+
+    Measured on the reference skins: 1.04 tones/line on average, max 2 — they
+    colour a line by ROLE, not per pixel. That is what keeps skynet and lain
+    readable: the scaffolding is one dim tone, the shape is the bright one.
+    Collapsing the row to a single dominant tone flattens the art, because a
+    bright pupil and its dim reticle then paint identically.
+    """
+    lit = [(i, c) for i, (ch, c) in enumerate(row) if c is not None]
+    if not lit:
+        return None
+    frame, figure = ramp[1], ramp[-1]
+    # A cell is "figure" when it is at least as bright as the ramp's top third.
+    top = [c for _, c in lit]
+    brightest = max(sum(int(c[i:i + 2], 16) for i in (1, 3, 5)) for c in top)
+    cut = brightest * 0.62
+    is_fig = {i for i, c in lit
+              if sum(int(c[i:i + 2], 16) for i in (1, 3, 5)) >= cut}
+    if not is_fig:
+        return [(0, len(row) - 1, frame)]
+    return [(0, min(is_fig) - 1, frame),
+            (min(is_fig), len(row) - 1, figure)]
+
+
 def wordmark(name, ramp, gap=1):
-    """Block-letter wordmark with a per-letter colour ramp (never braille dots:
-    at wordmark size braille is illegible, so this uses the U+2588 family)."""
+    """Block-letter wordmark in the reference format: ONE span per line, gaps
+    painted U+2800 (never a real space), accent applied per letter-run.
+
+    The reference wordmarks (skynet's "SKYNET DEFENSE NETWORK", bubblegum's
+    wordmark) are `[bold #...]` blocks at 5-14 lines with no per-column spans.
+    A per-column ramp is what made the previous build emit 13.6 spans/line.
+    """
     lines = render_wordmark(name, gap=gap)
-    per_col = max(1, len(ramp) // max(1, len(name)))
+    n = len(ramp)
     out = []
     for row in lines:
-        buf = []
-        col_i = 0
-        for chpos, ch in enumerate(row):
-            if ch == " ":
-                buf.append(" ")
-                continue
-            idx = min(len(ramp) - 1, (chpos * per_col) // max(1, len(lines[0]) or 1))
-            buf.append(f"[{ramp[idx]}]{ch}[/]")
-        out.append("".join(buf).rstrip())
+        # One tone per row, picked by how much ink the row carries: a crossbar
+        # row is dimmer than a stem row, which reads as depth without noise.
+        ink = sum(1 for c in row if c != " ")
+        tone = ramp[min(n - 1, 1 + (ink * (n - 2)) // max(1, len(row)))]
+        body = row.replace(" ", BLANK_BRAILLE).rstrip()
+        out.append(f"[bold {tone}]{body}[/]")
     return out
 
 
@@ -196,9 +267,20 @@ def build(name, cfg):
     )
     art = Art(46, 20)
     MOTIFS[name](art)
-    hero = markup_lines(art, cfg["ramp"])
+    hero = markup_lines(art, cfg["ramp"], line_style=_split_row, bg_char=BLANK_BRAILLE)
+    # The reference wordmarks are `[bold #...]` block type, not braille: solid
+    # U+2588 glyphs read as letters where 2x4 braille dots do not.
     logo = wordmark(cfg["title"].upper(), [cfg["accent2"], cfg["accent"],
                                        cfg["strong"], cfg["title_c"], cfg["text"]])
+    # Signature tagline under the wordmark, in the skin's dim tone (the reference
+    # skins sign their art this way: "★ A G E N T ★", "♪ press play ♪").
+    # The tagline is centred on the HERO width (what the panel actually shows),
+    # not the wordmark, and it is capped to the hero budget so it cannot blow the
+    # line width the way a logo-width pad did.
+    tag = TAGLINES[name]
+    hero_w = art_width_plain([re.sub(r"\[[^\]]*\]", "", l) for l in hero]) or 46
+    pad = max(0, min(hero_w - len(tag), (hero_w - len(tag)) // 2))
+    tagline = f"[dim {cfg['dim']}]{BLANK_BRAILLE * pad}{tag}{BLANK_BRAILLE}{BLANK_BRAILLE * pad}[/]"
 
     L = []
     L.append(f"# {cfg['title']} — {cfg['tagline']}")
@@ -239,7 +321,7 @@ def build(name, cfg):
     L.append(yaml_art(logo))
     L.append("")
     L.append("banner_hero: |")
-    L.append(yaml_art(hero))
+    L.append(yaml_art(hero + [tagline]))
     return "\n".join(L) + "\n"
 
 

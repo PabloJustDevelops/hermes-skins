@@ -107,6 +107,30 @@ colour fade.
 
 ---
 
+## The ASCII conventions (reverse-engineered)
+
+Every skin in the reference collection follows three rules that a naive
+generator gets wrong. Measured across the 16 reference skins (374 art lines):
+
+| | reference | naive per-cell |
+|---|---|---|
+| spans per line | **2.33** | 23.9 |
+| tones per line | **2.33** | 3.6 |
+| background | **U+2800** blank braille | spaces |
+
+1. **Colour by role, not per pixel.** ~2 tones per line: a muted frame and a
+   bright figure. Per-cell ramps read as noise and cost 9x the markup.
+2. **The background is U+2800** (blank braille), never U+0020, so the art is a
+   solid braille field instead of holes.
+3. **One `[color]...[/]` span wraps the run.** `test_art_rescale.py` rejects a
+   skin that exceeds 2.6 tones/line, 6 spans/line, or uses real spaces.
+
+Each skin also signs its art with a letter-spaced tagline in the dim tone
+(`♥ u m b r a`, `◆ q u e r y`) and a `welcome` greeting faded per character —
+the way the reference wordmarks do.
+
+---
+
 ## Layout
 
 ```

@@ -102,6 +102,47 @@ def check_logo_threshold(block: str, failures: list, name: str):
             f"terminals (>= {LOGO_MIN_COLS}); at {LOGO_MIN_COLS} it is clipped")
 
 
+def check_repo_format(block, label, failures, is_logo=False):
+    r"""Match the reference collection's ASCII conventions.
+
+    Measured on joeynyc/hermes-skins (16 skins, 246 lines):
+      * background painted with U+2800 (blank braille), never a real space;
+      * ~1 tone per line, at most 2 - colour by ROLE, not per pixel;
+      * 310/362 lines are a single `[color]...[/]` span.
+    Per-cell spans (what a naive generator emits) run ~9x the markup and read
+    as noise, so they are rejected here.
+    """
+    lines = [l for l in block.splitlines() if l.strip()]
+    if not lines:
+        return
+    # 1. No real spaces in the art body: the reference uses U+2800. Counted on
+    # the visible glyphs only (markup stripped), which is what the terminal
+    # actually renders.
+    spaces = sum(plain(l).count(" ") for l in lines)
+    if spaces:
+        failures.append(
+            f"{label}: {spaces} real space(s) in the art; the reference skins paint "
+            f"the background with U+2800 (blank braille)")
+    # 2. Colour by role, not per pixel.
+    tones, spans = [], []
+    for l in lines:
+        cs = re.findall(r"\[(?:bold |dim )?#[0-9A-Fa-f]{6}\]", l)
+        tones.append(len(set(cs)))
+        spans.append(len(cs))
+    avg_t, avg_s = sum(tones) / len(tones), sum(spans) / len(spans)
+    if avg_t > 2.6:
+        failures.append(
+            f"{label}: {avg_t:.2f} tones/line (reference is 1.04, max 2) - the art is "
+            f"coloured per pixel and will read as noise")
+    if avg_s > 6.0:
+        failures.append(
+            f"{label}: {avg_s:.2f} spans/line (reference is 2.8) - markup bloat that "
+            f"also makes the YAML fragile")
+    # 3. The art must actually paint a background.
+    if sum(l.count("\u2800") for l in lines) == 0:
+        failures.append(f"{label}: no U+2800 background at all")
+
+
 def check_heritage(skins_dir: str, budget_for_hero, failures: list):
     """Full battery over every skin in the repo."""
     report = []
@@ -117,6 +158,8 @@ def check_heritage(skins_dir: str, budget_for_hero, failures: list):
         lw, lh = art_width(logo), art_height(logo)
 
         check_no_wrap(hero, budget_for_hero(name, hw), f"{name}.hero", failures)
+        check_repo_format(hero, f"{name}.hero", failures)
+        check_repo_format(logo, f"{name}.logo", failures)
         for cols in TEST_COLS:
             check_real_render(hero, cols, f"{name}.hero@{cols}", failures)
         check_logo_threshold(logo, failures, name)
