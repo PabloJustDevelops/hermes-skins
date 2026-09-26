@@ -1,0 +1,119 @@
+# Umbra — An eye opening inside a targeting reticle.
+# Art: braille generated with real geometry (never hand-drawn).
+# Contrast: every text colour >= 4.5:1 (WCAG AA) on its own status bar.
+name: umbra
+description: "Umbra — An eye opening inside a targeting reticle."
+
+colors:
+  background: "#0a0a0c"
+  ui_accent: "#A78BFA"
+  banner_accent: "#A78BFA"
+  banner_title: "#E9D5FF"
+  banner_text: "#EDE9FE"
+  ui_text: "#EDE9FE"
+  banner_dim: "#9C90C4"
+  ui_label: "#22D3EE"
+  banner_border: "#2A2140"
+  ui_border: "#2A2140"
+  ui_ok: "#5EE9B4"
+  ui_warn: "#FFD166"
+  ui_error: "#FF6B8A"
+  prompt: "#EDE9FE"
+  input_rule: "#A78BFA"
+  response_border: "#22D3EE"
+  status_bar_bg: "#141020"
+  status_bar_text: "#EDE9FE"
+  status_bar_strong: "#C4B5FD"
+  status_bar_dim: "#9C90C4"
+  status_bar_good: "#5EE9B4"
+  status_bar_warn: "#FFD166"
+  status_bar_bad: "#F59E6B"
+  status_bar_critical: "#FF6B8A"
+  session_label: "#A78BFA"
+  session_border: "#3A2E58"
+  completion_menu_bg: "#12101C"
+  completion_menu_current_bg: "#2E2450"
+  completion_menu_meta_bg: "#1B1730"
+  completion_menu_meta_current_bg: "#3E3268"
+  selection_bg: "#2A2140"
+  voice_status_bg: "#141020"
+  shell_dollar: "#22D3EE"
+  ui_tool: "#A78BFA"
+  ui_thinking: "#9C90C4"
+  diff_added: "#5EE9B4"
+  diff_removed: "#FF6B8A"
+  diff_added_word: "#5EE9B4"
+  diff_removed_word: "#FF6B8A"
+  syntax_string: "#5EE9B4"
+  syntax_number: "#FFD166"
+  syntax_keyword: "#22D3EE"
+  syntax_comment: "#9C90C4"
+
+spinner:
+  waiting_faces: ["(◈)", "(◎)", "(◉)", "(◍)", "(•)"]
+  thinking_faces: ["(◈)", "(◎)", "(◉)", "(◍)", "(✦)"]
+  thinking_verbs:
+    - "opening the eye"
+    - "measuring the pupil"
+    - "calibrating the reticle"
+    - "waiting for the section"
+    - "sweeping the image"
+    - "focusing the iris"
+    - "awaiting the light"
+    - "closing the cycle"
+  wings:
+    - ["◈", "◈"]
+    - ["◎", "◎"]
+    - ["◉", "◉"]
+
+tool_emojis:
+  terminal: "Θ"
+  web_search: "Ω"
+  read_file: "◇"
+  write_file: "◆"
+  search_files: "◈"
+  execute_code: "Δ"
+  browser_navigate: "Φ"
+  delegate_task: "▣"
+  mixture_of_agents: "⚗"
+  memory: "◐"
+  clarify: "Θ"
+  cronjob: "↻"
+  process: "⚙"
+  todo: "☐"
+
+branding:
+  agent_name: "Umbra Agent"
+  prompt_symbol: "◈ ❯ "
+  response_label: " ◈ Umbra "
+  welcome: "Welcome to Umbra Agent! Type your message or /help for commands."
+  goodbye: "The eye closes. The light stays."
+  help_header: "(◈) Available Commands"
+
+tool_prefix: "▏"
+
+banner_logo: |
+  [#A78BFA]⣴[/][#A78BFA]⣦[/]
+  [#A78BFA]⠏[/][#A78BFA]⠹[/]
+
+banner_hero: |
+  [#4C2E8A]⡇[/]        [#4C2E8A]⣀[/][#4C2E8A]⣠[/][#7C4DDB]⠤[/][#7C4DDB]⠖[/][#4C2E8A]⠋[/][#4C2E8A]⠉[/]    [#A78BFA]⡇[/]   [#2A1B4A]⠈[/][#4C2E8A]⠉[/][#7C4DDB]⠓[/][#4C2E8A]⠦[/][#7C4DDB]⢤[/][#4C2E8A]⣀[/][#2A1B4A]⡀[/]        [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/]      [#2A1B4A]⠐[/][#7C4DDB]⠋[/][#4C2E8A]⠁[/]         [#E9D5FF]⡇[/]         [#7C4DDB]⠉[/][#2A1B4A]⠓[/]       [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/] [#4C2E8A]⡀[/]                [#E9D5FF]⡇[/]                [#4C2E8A]⡀[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]          [#22D3EE]⣀[/][#22D3EE]⣤[/][#22D3EE]⡴[/][#22D3EE]⢶[/][#22D3EE]⣖[/][#22D3EE]⣛[/][#22D3EE]⣛[/][#22D3EE]⣓[/][#22D3EE]⣶[/][#22D3EE]⠶[/][#22D3EE]⣤[/][#22D3EE]⣄[/][#7C4DDB]⡀[/]          [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]       [#22D3EE]⣠[/][#22D3EE]⡴[/][#22D3EE]⡻[/][#22D3EE]⣹[/][#22D3EE]⣾[/][#22D3EE]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#22D3EE]⣿[/][#22D3EE]⣾[/][#22D3EE]⡹[/][#22D3EE]⡳[/][#22D3EE]⣤[/][#E9D5FF]⡀[/]       [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]     [#22D3EE]⣠[/][#22D3EE]⢞[/][#22D3EE]⠝[/][#22D3EE]⠁[/][#7C4DDB]⣴[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣷[/][#7C4DDB]⡄[/][#22D3EE]⠙[/][#22D3EE]⢝[/][#22D3EE]⢦[/][#22D3EE]⡀[/]     [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]   [#22D3EE]⣠[/][#22D3EE]⡞[/][#22D3EE]⡡[/][#22D3EE]⠁[/] [#7C4DDB]⣼[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⡄[/] [#22D3EE]⠡[/][#22D3EE]⡙[/][#22D3EE]⣦[/][#4C2E8A]⡀[/]   [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]  [#22D3EE]⣴[/][#22D3EE]⠋[/][#22D3EE]⡐[/]  [#7C4DDB]⣸[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⡀[/] [#22D3EE]⠐[/][#22D3EE]⡈[/][#22D3EE]⢳[/][#22D3EE]⡄[/]  [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/] [#22D3EE]⣼[/][#22D3EE]⠃[/][#22D3EE]⢀[/][#22D3EE]⠁[/]  [#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⡇[/]  [#22D3EE]⢁[/] [#22D3EE]⢻[/][#22D3EE]⡄[/] [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/][#22D3EE]⣸[/][#22D3EE]⠇[/] [#22D3EE]⠈[/]  [#7C4DDB]⢸[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/]  [#22D3EE]⠈[/]  [#22D3EE]⢿[/][#2A1B4A]⡀[/][#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/][#22D3EE]⢻[/][#E9D5FF]⡄[/]    [#7C4DDB]⢸[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/]     [#22D3EE]⣼[/][#7C4DDB]⠃[/][#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/][#4C2E8A]⠈[/][#22D3EE]⢷[/][#7C4DDB]⡀[/][#22D3EE]⠘[/]  [#7C4DDB]⠈[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⡏[/]  [#22D3EE]⠘[/] [#22D3EE]⣰[/][#22D3EE]⠏[/] [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/] [#A78BFA]⠈[/][#22D3EE]⢷[/][#22D3EE]⡀[/][#22D3EE]⢃[/]  [#7C4DDB]⢻[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#22D3EE]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⠃[/] [#22D3EE]⢀[/][#22D3EE]⠃[/][#22D3EE]⣰[/][#22D3EE]⠏[/]  [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]   [#22D3EE]⠻[/][#22D3EE]⣆[/][#22D3EE]⠢[/] [#7C4DDB]⠈[/][#7C4DDB]⢿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⠏[/] [#22D3EE]⠠[/][#22D3EE]⢂[/][#22D3EE]⡾[/][#22D3EE]⠃[/]   [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]    [#22D3EE]⠈[/][#22D3EE]⠳[/][#22D3EE]⣕[/][#22D3EE]⢄[/][#7C4DDB]⠈[/][#7C4DDB]⢿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⠏[/][#22D3EE]⢀[/][#22D3EE]⢔[/][#22D3EE]⡵[/][#22D3EE]⠋[/]     [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]      [#22D3EE]⠈[/][#22D3EE]⠻[/][#22D3EE]⢧[/][#22D3EE]⣢[/][#22D3EE]⢻[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#7C4DDB]⣿[/][#22D3EE]⣿[/][#22D3EE]⢣[/][#22D3EE]⣢[/][#22D3EE]⠿[/][#22D3EE]⠋[/]       [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⢸[/][#7C4DDB]⡇[/]         [#22D3EE]⠉[/][#22D3EE]⠛[/][#22D3EE]⠾[/][#22D3EE]⢯[/][#22D3EE]⣽[/][#22D3EE]⣟[/][#22D3EE]⣛[/][#22D3EE]⣛[/][#22D3EE]⣛[/][#22D3EE]⣿[/][#22D3EE]⣭[/][#22D3EE]⠿[/][#22D3EE]⠞[/][#22D3EE]⠋[/][#7C4DDB]⠁[/]         [#7C4DDB]⣿[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/][#4C2E8A]⠈[/][#7C4DDB]⠃[/]               [#4C2E8A]⠉[/][#E9D5FF]⡏[/][#2A1B4A]⠁[/]               [#7C4DDB]⠋[/] [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/]                  [#E9D5FF]⡇[/]                  [#4C2E8A]⡇[/]
+  [#4C2E8A]⡇[/]                  [#E9D5FF]⡇[/]                  [#4C2E8A]⡇[/]

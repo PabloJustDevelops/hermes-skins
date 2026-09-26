@@ -1,0 +1,116 @@
+# Genesis — A crystal shattered by an impact.
+# Art: braille generated with real geometry (never hand-drawn).
+# Contrast: every text colour >= 4.5:1 (WCAG AA) on its own status bar.
+name: genesis
+description: "Genesis — A crystal shattered by an impact."
+
+colors:
+  background: "#070912"
+  ui_accent: "#A8C4FF"
+  banner_accent: "#A8C4FF"
+  banner_title: "#E0E7FF"
+  banner_text: "#E0E7FF"
+  ui_text: "#E0E7FF"
+  banner_dim: "#9FB0D8"
+  ui_label: "#5B87E0"
+  banner_border: "#1E2A4E"
+  ui_border: "#1E2A4E"
+  ui_ok: "#7DD3A0"
+  ui_warn: "#FFD166"
+  ui_error: "#FF6B8A"
+  prompt: "#E0E7FF"
+  input_rule: "#A8C4FF"
+  response_border: "#5B87E0"
+  status_bar_bg: "#0d1226"
+  status_bar_text: "#E0E7FF"
+  status_bar_strong: "#C4D8FF"
+  status_bar_dim: "#9FB0D8"
+  status_bar_good: "#7DD3A0"
+  status_bar_warn: "#FFD166"
+  status_bar_bad: "#F59E6B"
+  status_bar_critical: "#FF6B8A"
+  session_label: "#A8C4FF"
+  session_border: "#2A3A66"
+  completion_menu_bg: "#0A0D1C"
+  completion_menu_current_bg: "#1E2A50"
+  completion_menu_meta_bg: "#101634"
+  completion_menu_meta_current_bg: "#2A3A66"
+  selection_bg: "#1E2A4E"
+  voice_status_bg: "#0d1226"
+  shell_dollar: "#5B87E0"
+  ui_tool: "#A8C4FF"
+  ui_thinking: "#9FB0D8"
+  diff_added: "#7DD3A0"
+  diff_removed: "#FF6B8A"
+  diff_added_word: "#7DD3A0"
+  diff_removed_word: "#FF6B8A"
+  syntax_string: "#7DD3A0"
+  syntax_number: "#FFD166"
+  syntax_keyword: "#5B87E0"
+  syntax_comment: "#9FB0D8"
+
+spinner:
+  waiting_faces: ["(◈)", "(◇)", "(◆)", "(◭)", "(▣)"]
+  thinking_faces: ["(◈)", "(◇)", "(◆)", "(✦)", "(✧)"]
+  thinking_verbs:
+    - "splitting the lattice"
+    - "tracing the fracture"
+    - "reading the facets"
+    - "waiting for the flash"
+    - "mapping the shards"
+    - "measuring the break"
+    - "holding the protocol"
+    - "ending the sequence"
+  wings:
+    - ["◈", "◈"]
+    - ["◆", "◆"]
+    - ["◇", "◇"]
+
+tool_emojis:
+  terminal: "Θ"
+  web_search: "Ω"
+  read_file: "◇"
+  write_file: "◆"
+  search_files: "◈"
+  execute_code: "Δ"
+  browser_navigate: "Φ"
+  delegate_task: "▣"
+  mixture_of_agents: "⚗"
+  memory: "◐"
+  clarify: "Θ"
+  cronjob: "↻"
+  process: "⚙"
+  todo: "☐"
+
+branding:
+  agent_name: "Genesis Agent"
+  prompt_symbol: "◈ ❯ "
+  response_label: " ◈ Genesis "
+  welcome: "Welcome to Genesis Agent! Type your message or /help for commands."
+  goodbye: "Protocol ends. Light fades to protocol."
+  help_header: "(◈) Available Commands"
+
+tool_prefix: "▏"
+
+banner_logo: |
+
+
+banner_hero: |
+  [#080B1E]⡀[/]
+  [#1B2A5E]⢀[/][#3559A8]⣠[/][#3559A8]⠖[/][#5B87E0]⠋[/][#3559A8]⠉[/][#1B2A5E]⠓[/][#1B2A5E]⢦[/][#3559A8]⣇[/]
+  [#080B1E]⢀[/][#080B1E]⢀[/][#3559A8]⣠[/][#5B87E0]⠴[/][#3559A8]⠚[/][#3559A8]⠉[/]     [#1B2A5E]⢸[/][#080B1E]⠈[/][#3559A8]⠙[/][#3559A8]⠲[/][#3559A8]⢤[/][#3559A8]⣀[/]       [#E0E7FF]⣤[/][#E0E7FF]⣄[/][#E0E7FF]⣀[/]
+  [#3559A8]⣠[/][#3559A8]⡴[/][#3559A8]⠚[/][#3559A8]⢻[/][#1B2A5E]⡀[/]        [#3559A8]⡟[/]    [#1B2A5E]⠈[/][#3559A8]⠙[/][#3559A8]⠲[/][#3559A8]⣤[/][#1B2A5E]⡀[/]   [#A8C4FF]⠘[/][#E0E7FF]⣶[/][#A8C4FF]⠃[/]
+  [#1B2A5E]⣀[/][#3559A8]⡤[/][#3559A8]⠖[/][#3559A8]⠋[/][#080B1E]⠁[/]   [#3559A8]⠹[/][#3559A8]⣄[/]       [#3559A8]⠁[/]        [#3559A8]⠉[/][#3559A8]⠓[/][#5B87E0]⠦[/][#5B87E0]⣄[/][#1B2A5E]⡀[/]
+  [#080B1E]⠈[/][#1B2A5E]⠙[/][#1B2A5E]⠲[/][#1B2A5E]⢄[/][#1B2A5E]⡀[/]         [#3559A8]⣠[/][#3559A8]⠴[/][#3559A8]⠲[/][#3559A8]⢤[/][#3559A8]⡀[/]      [#5B87E0]⣠[/][#1B2A5E]⠖[/][#080B1E]⠁[/][#1B2A5E]⣀[/][#1B2A5E]⠴[/][#1B2A5E]⠚[/][#1B2A5E]⣿[/]
+  [#1B2A5E]⠈[/][#1B2A5E]⠓[/][#3559A8]⠦[/][#3559A8]⣄[/][#1B2A5E]⡀[/] [#3559A8]⣀[/][#3559A8]⡤[/][#3559A8]⠖[/][#3559A8]⠋[/]    [#3559A8]⠈[/][#3559A8]⠓[/][#3559A8]⠦[/][#3559A8]⣄[/][#1B2A5E]⡀[/] [#3559A8]⣈[/][#3559A8]⡤[/][#1B2A5E]⠖[/][#1B2A5E]⠋[/]   [#080B1E]⣿[/]
+  [#080B1E]⠐[/][#1B2A5E]⠲[/][#3559A8]⠤[/][#3559A8]⢤[/]  [#3559A8]⠉[/][#3559A8]⡏[/][#1B2A5E]⠁[/] [#5B87E0]⢀[/][#E0E7FF]⣠[/][#3559A8]⡀[/]       [#3559A8]⠉[/][#3559A8]⡏[/][#1B2A5E]⠁[/]      [#1B2A5E]⣿[/]
+  [#3559A8]⡇[/]  [#E0E7FF]⠺[/][#E0E7FF]⣿[/][#E0E7FF]⣇[/]        [#3559A8]⡇[/]       [#1B2A5E]⣿[/]
+  [#3559A8]⡇[/]    [#E0E7FF]⠈[/][#E0E7FF]⠣[/][#A8C4FF]⣤[/][#A8C4FF]⡀[/]     [#3559A8]⡇[/]       [#1B2A5E]⣿[/]
+  [#3559A8]⡇[/]       [#A8C4FF]⠉[/][#A8C4FF]⡳[/][#A8C4FF]⣄[/]   [#3559A8]⡇[/]       [#1B2A5E]⣿[/]
+  [#3559A8]⠉[/][#3559A8]⠓[/][#3559A8]⠦[/][#3559A8]⣄[/][#080B1E]⡀[/]   [#1B2A5E]⣰[/][#1B2A5E]⠁[/][#5B87E0]⡉[/][#5B87E0]⠆[/][#5B87E0]⣒[/][#3559A8]⠋[/][#080B1E]⠁[/]       [#1B2A5E]⣿[/]
+  [#3559A8]⠉[/][#3559A8]⠲[/][#3559A8]⢤[/][#5B87E0]⣠[/][#3559A8]⠴[/][#3559A8]⠊[/][#3559A8]⠁[/] [#5B87E0]⠉[/][#3559A8]⠋[/] [#080B1E]⡀[/]      [#1B2A5E]⣿[/]
+  [#080B1E]⠈[/][#080B1E]⠓[/][#080B1E]⠦[/][#5B87E0]⣄[/][#080B1E]⡀[/]           [#5B87E0]⡇[/]     [#1B2A5E]⢰[/][#1B2A5E]⠊[/][#3559A8]⢷[/][#3559A8]⡄[/]  [#3559A8]⣀[/][#3559A8]⡤[/][#1B2A5E]⠖[/][#1B2A5E]⠋[/]
+  [#1B2A5E]⠉[/] [#080B1E]⠉[/][#1B2A5E]⣲[/][#3559A8]⣤[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#3559A8]⣇[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣀[/][#080B1E]⣉[/][#080B1E]⣀[/][#1B2A5E]⣀[/][#3559A8]⣀[/][#1B2A5E]⣠[/][#3559A8]⣋[/][#1B2A5E]⠁[/]
+  [#080B1E]⠿[/][#080B1E]⠿[/][#080B1E]⠿[/][#080B1E]⠿[/][#080B1E]⠿[/][#1B2A5E]⢿[/][#3559A8]⣿[/][#3559A8]⡿[/][#1B2A5E]⠿[/][#1B2A5E]⠿[/][#1B2A5E]⠿[/][#5B87E0]⡿[/][#1B2A5E]⠿[/][#1B2A5E]⠿[/][#1B2A5E]⠿[/][#1B2A5E]⢿[/][#3559A8]⣿[/][#5B87E0]⠿[/][#5B87E0]⠿[/][#3559A8]⠿[/][#080B1E]⠿[/][#080B1E]⠇[/][#1B2A5E]⠙[/][#1B2A5E]⠃[/]
+  [#1B2A5E]⠈[/][#080B1E]⠙[/][#080B1E]⠲[/][#3559A8]⢤[/][#1B2A5E]⡂[/][#1B2A5E]⡇[/][#3559A8]⣀[/][#3559A8]⡴[/][#3559A8]⠚[/][#3559A8]⠉[/]
+  [#080B1E]⠉[/][#5B87E0]⠋[/][#080B1E]⠁[/]
