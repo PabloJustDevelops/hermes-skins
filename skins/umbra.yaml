@@ -86,15 +86,18 @@ branding:
   agent_name: "Umbra Agent"
   prompt_symbol: "◈ ❯ "
   response_label: " ◈ Umbra "
-  welcome: "Welcome to Umbra Agent! Type your message or /help for commands."
+  welcome: "[bold #22D3EE]W[/][bold #22D3EE]e[/][bold #22D3EE]l[/][bold #22D3EE]c[/][bold #22D3EE]o[/][bold #22D3EE]m[/][bold #22D3EE]e[/] [bold #22D3EE]t[/][bold #22D3EE]o[/] [bold #22D3EE]U[/][bold #22D3EE]m[/][bold #22D3EE]b[/][bold #22D3EE]r[/][bold #22D3EE]a[/] [bold #A78BFA]A[/][bold #A78BFA]g[/][bold #A78BFA]e[/][bold #A78BFA]n[/][bold #A78BFA]t[/][bold #A78BFA]![/] [bold #A78BFA]T[/][bold #A78BFA]y[/][bold #A78BFA]p[/][bold #A78BFA]e[/] [bold #A78BFA]y[/][bold #A78BFA]o[/][bold #A78BFA]u[/][bold #C4B5FD]r[/] [bold #C4B5FD]m[/][bold #C4B5FD]e[/][bold #C4B5FD]s[/][bold #C4B5FD]s[/][bold #C4B5FD]a[/][bold #C4B5FD]g[/][bold #C4B5FD]e[/] [bold #C4B5FD]o[/][bold #C4B5FD]r[/] [bold #C4B5FD]/[/][bold #C4B5FD]h[/][bold #C4B5FD]e[/][bold #E9D5FF]l[/][bold #E9D5FF]p[/] [bold #E9D5FF]f[/][bold #E9D5FF]o[/][bold #E9D5FF]r[/] [bold #E9D5FF]c[/][bold #E9D5FF]o[/][bold #E9D5FF]m[/][bold #E9D5FF]m[/][bold #E9D5FF]a[/][bold #E9D5FF]n[/][bold #E9D5FF]d[/][bold #E9D5FF]s[/][bold #E9D5FF].[/]"
   goodbye: "The eye closes. The light stays."
   help_header: "(◈) Available Commands"
 
 tool_prefix: "▏"
 
 banner_logo: |
-  [#A78BFA]⣴[/][#A78BFA]⣦[/]
-  [#A78BFA]⠏[/][#A78BFA]⠹[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]   [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#A78BFA]█[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/] [#22D3EE]█[/] [#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#A78BFA]█[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]  [#22D3EE]█[/]  [#22D3EE]█[/]   [#A78BFA]█[/]
+   [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#A78BFA]█[/]
 
 banner_hero: |
   [#4C2E8A]⡇[/]        [#4C2E8A]⣀[/][#4C2E8A]⣠[/][#7C4DDB]⠤[/][#7C4DDB]⠖[/][#4C2E8A]⠋[/][#4C2E8A]⠉[/]    [#A78BFA]⡇[/]   [#2A1B4A]⠈[/][#4C2E8A]⠉[/][#7C4DDB]⠓[/][#4C2E8A]⠦[/][#7C4DDB]⢤[/][#4C2E8A]⣀[/][#2A1B4A]⡀[/]        [#4C2E8A]⡇[/]

@@ -86,14 +86,18 @@ branding:
   agent_name: "Neurosyn Agent"
   prompt_symbol: "◈ ❯ "
   response_label: " ◈ Neurosyn "
-  welcome: "Welcome to Neurosyn Agent! Type your message or /help for commands."
+  welcome: "[bold #A78BFA]W[/][bold #A78BFA]e[/][bold #A78BFA]l[/][bold #A78BFA]c[/][bold #A78BFA]o[/][bold #A78BFA]m[/][bold #A78BFA]e[/] [bold #A78BFA]t[/][bold #A78BFA]o[/] [bold #A78BFA]N[/][bold #A78BFA]e[/][bold #A78BFA]u[/][bold #A78BFA]r[/][bold #A78BFA]o[/][bold #A78BFA]s[/][bold #E86BB0]y[/][bold #E86BB0]n[/] [bold #E86BB0]A[/][bold #E86BB0]g[/][bold #E86BB0]e[/][bold #E86BB0]n[/][bold #E86BB0]t[/][bold #E86BB0]![/] [bold #E86BB0]T[/][bold #E86BB0]y[/][bold #E86BB0]p[/][bold #E86BB0]e[/] [bold #E86BB0]y[/][bold #E86BB0]o[/][bold #F9B8DC]u[/][bold #F9B8DC]r[/] [bold #F9B8DC]m[/][bold #F9B8DC]e[/][bold #F9B8DC]s[/][bold #F9B8DC]s[/][bold #F9B8DC]a[/][bold #F9B8DC]g[/][bold #F9B8DC]e[/] [bold #F9B8DC]o[/][bold #F9B8DC]r[/] [bold #F9B8DC]/[/][bold #F9B8DC]h[/][bold #F9B8DC]e[/][bold #F9B8DC]l[/][bold #F9B8DC]p[/] [bold #F9B8DC]f[/][bold #F9B8DC]o[/][bold #F9B8DC]r[/] [bold #F9B8DC]c[/][bold #F9B8DC]o[/][bold #F9B8DC]m[/][bold #F9B8DC]m[/][bold #F9B8DC]a[/][bold #F9B8DC]n[/][bold #F9B8DC]d[/][bold #F9B8DC]s[/][bold #F9B8DC].[/]"
   goodbye: "Synapse closed. Signal fading."
   help_header: "(◈) Available Commands"
 
 tool_prefix: "▏"
 
 banner_logo: |
-
+  [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/] [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]   [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]   [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/] [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/]   [#A78BFA]█[/]
+  [#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/] [#A78BFA]█[/]     [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/]      [#A78BFA]█[/] [#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/]
+  [#A78BFA]█[/] [#A78BFA]█[/] [#A78BFA]█[/] [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/]   [#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]    [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/] [#A78BFA]█[/]
+  [#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/] [#A78BFA]█[/]     [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/]  [#A78BFA]█[/]  [#A78BFA]█[/]   [#A78BFA]█[/]     [#A78BFA]█[/]   [#A78BFA]█[/]   [#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/]
+  [#A78BFA]█[/]   [#A78BFA]█[/] [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/]   [#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]  [#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/][#A78BFA]█[/]    [#A78BFA]█[/]   [#A78BFA]█[/]   [#A78BFA]█[/]
 
 banner_hero: |
   [#A78BFA]⣀[/][#F9B8DC]⡀[/]

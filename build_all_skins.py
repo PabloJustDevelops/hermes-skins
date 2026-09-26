@@ -13,6 +13,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from theme_art import Art, MOTIFS, RAMPS, to_cells  # noqa: E402
+from blockfont import render_wordmark  # noqa: E402
 
 SKINS_DIR = os.path.expanduser("~/.hermes/skins")
 
@@ -135,14 +136,36 @@ def markup_lines(art, ramp):
     return out
 
 
-def figlet(name, ramp):
-    from theme_art import FONT
-    art = Art(len(name) * 5 + 1, 6)
-    x = 2
-    for ch in name:
-        art.glyph(ch, x, art.H / 2, 1.0, size=1.0)
-        x += 5
-    return markup_lines(art, ramp)
+def wordmark(name, ramp, gap=1):
+    """Block-letter wordmark with a per-letter colour ramp (never braille dots:
+    at wordmark size braille is illegible, so this uses the U+2588 family)."""
+    lines = render_wordmark(name, gap=gap)
+    per_col = max(1, len(ramp) // max(1, len(name)))
+    out = []
+    for row in lines:
+        buf = []
+        col_i = 0
+        for chpos, ch in enumerate(row):
+            if ch == " ":
+                buf.append(" ")
+                continue
+            idx = min(len(ramp) - 1, (chpos * per_col) // max(1, len(lines[0]) or 1))
+            buf.append(f"[{ramp[idx]}]{ch}[/]")
+        out.append("".join(buf).rstrip())
+    return out
+
+
+def gradient_welcome(agent, ramp):
+    """Per-character colour fade for the greeting, like the community wordmarks."""
+    msg = f"Welcome to {agent}! Type your message or /help for commands."
+    n = len(ramp)
+    out = []
+    for i, ch in enumerate(msg):
+        if ch == " ":
+            out.append(" ")
+        else:
+            out.append(f"[bold {ramp[min(n - 1, (i * n) // max(1, len(msg)))]}]{ch}[/]")
+    return "".join(out)
 
 
 def q(s):
@@ -174,8 +197,8 @@ def build(name, cfg):
     art = Art(46, 20)
     MOTIFS[name](art)
     hero = markup_lines(art, cfg["ramp"])
-    logo = figlet(cfg["title"].upper(), [cfg["border"], cfg["accent2"], cfg["accent"],
-                                        cfg["strong"], cfg["title_c"]])
+    logo = wordmark(cfg["title"].upper(), [cfg["accent2"], cfg["accent"],
+                                       cfg["strong"], cfg["title_c"], cfg["text"]])
 
     L = []
     L.append(f"# {cfg['title']} — {cfg['tagline']}")
@@ -206,7 +229,7 @@ def build(name, cfg):
     L.append(f"  agent_name: {q(cfg['agent'])}")
     L.append(f"  prompt_symbol: {q(cfg['prompt'])}")
     L.append(f"  response_label: {q(cfg['label_text'])}")
-    L.append(f"  welcome: {q('Welcome to ' + cfg['agent'] + '! Type your message or /help for commands.')}")
+    L.append(f"  welcome: {q(gradient_welcome(cfg['agent'], [cfg['accent2'], cfg['accent'], cfg['strong'], cfg['title_c']]))}")
     L.append(f"  goodbye: {q(cfg['goodbye'])}")
     L.append(f"  help_header: {q('(' + cfg['sym'] + ') Available Commands')}")
     L.append("")

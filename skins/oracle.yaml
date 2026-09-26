@@ -86,15 +86,18 @@ branding:
   agent_name: "Oracle Agent"
   prompt_symbol: "◎ ❯ "
   response_label: " ◎ Oracle "
-  welcome: "Welcome to Oracle Agent! Type your message or /help for commands."
+  welcome: "[bold #22D3EE]W[/][bold #22D3EE]e[/][bold #22D3EE]l[/][bold #22D3EE]c[/][bold #22D3EE]o[/][bold #22D3EE]m[/][bold #22D3EE]e[/] [bold #22D3EE]t[/][bold #22D3EE]o[/] [bold #22D3EE]O[/][bold #22D3EE]r[/][bold #22D3EE]a[/][bold #22D3EE]c[/][bold #22D3EE]l[/][bold #22D3EE]e[/] [bold #5EE9B4]A[/][bold #5EE9B4]g[/][bold #5EE9B4]e[/][bold #5EE9B4]n[/][bold #5EE9B4]t[/][bold #5EE9B4]![/] [bold #5EE9B4]T[/][bold #5EE9B4]y[/][bold #5EE9B4]p[/][bold #5EE9B4]e[/] [bold #5EE9B4]y[/][bold #5EE9B4]o[/][bold #5EE9B4]u[/][bold #A7F3D0]r[/] [bold #A7F3D0]m[/][bold #A7F3D0]e[/][bold #A7F3D0]s[/][bold #A7F3D0]s[/][bold #A7F3D0]a[/][bold #A7F3D0]g[/][bold #A7F3D0]e[/] [bold #A7F3D0]o[/][bold #A7F3D0]r[/] [bold #A7F3D0]/[/][bold #A7F3D0]h[/][bold #A7F3D0]e[/][bold #D1FAE5]l[/][bold #D1FAE5]p[/] [bold #D1FAE5]f[/][bold #D1FAE5]o[/][bold #D1FAE5]r[/] [bold #D1FAE5]c[/][bold #D1FAE5]o[/][bold #D1FAE5]m[/][bold #D1FAE5]m[/][bold #D1FAE5]a[/][bold #D1FAE5]n[/][bold #D1FAE5]d[/][bold #D1FAE5]s[/][bold #D1FAE5].[/]"
   goodbye: "Query complete. Signal closed."
   help_header: "(◎) Available Commands"
 
 tool_prefix: "▏"
 
 banner_logo: |
-  [#5EE9B4]⣴[/][#5EE9B4]⣦[/]
-  [#5EE9B4]⠏[/][#5EE9B4]⠹[/]
+  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]   [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]   [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/] [#22D3EE]█[/]     [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]     [#22D3EE]█[/]     [#22D3EE]█[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/] [#22D3EE]█[/]     [#22D3EE]█[/]     [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]
+  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]  [#22D3EE]█[/]  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]     [#22D3EE]█[/]     [#22D3EE]█[/]
+  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]  [#22D3EE]█[/]   [#22D3EE]█[/] [#22D3EE]█[/]   [#22D3EE]█[/]  [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/] [#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/][#22D3EE]█[/]
 
 banner_hero: |
   [#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/][#04231C]⠉[/][#04231C]⠉[/][#04231C]⡏[/][#04231C]⠉[/][#04231C]⢹[/]
