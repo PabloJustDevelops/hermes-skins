@@ -86,32 +86,28 @@ branding:
   agent_name: "Neurosyn Agent"
   prompt_symbol: "◈ ❯ "
   response_label: " ◈ Neurosyn "
-  welcome: "[bold #A78BFA]W[/][bold #A78BFA]e[/][bold #A78BFA]l[/][bold #A78BFA]c[/][bold #A78BFA]o[/][bold #A78BFA]m[/][bold #A78BFA]e[/] [bold #A78BFA]t[/][bold #A78BFA]o[/] [bold #A78BFA]N[/][bold #A78BFA]e[/][bold #A78BFA]u[/][bold #A78BFA]r[/][bold #A78BFA]o[/][bold #A78BFA]s[/][bold #E86BB0]y[/][bold #E86BB0]n[/] [bold #E86BB0]A[/][bold #E86BB0]g[/][bold #E86BB0]e[/][bold #E86BB0]n[/][bold #E86BB0]t[/][bold #E86BB0]![/] [bold #E86BB0]T[/][bold #E86BB0]y[/][bold #E86BB0]p[/][bold #E86BB0]e[/] [bold #E86BB0]y[/][bold #E86BB0]o[/][bold #F9B8DC]u[/][bold #F9B8DC]r[/] [bold #F9B8DC]m[/][bold #F9B8DC]e[/][bold #F9B8DC]s[/][bold #F9B8DC]s[/][bold #F9B8DC]a[/][bold #F9B8DC]g[/][bold #F9B8DC]e[/] [bold #F9B8DC]o[/][bold #F9B8DC]r[/] [bold #F9B8DC]/[/][bold #F9B8DC]h[/][bold #F9B8DC]e[/][bold #F9B8DC]l[/][bold #F9B8DC]p[/] [bold #F9B8DC]f[/][bold #F9B8DC]o[/][bold #F9B8DC]r[/] [bold #F9B8DC]c[/][bold #F9B8DC]o[/][bold #F9B8DC]m[/][bold #F9B8DC]m[/][bold #F9B8DC]a[/][bold #F9B8DC]n[/][bold #F9B8DC]d[/][bold #F9B8DC]s[/][bold #F9B8DC].[/]"
+  welcome: "Welcome to Neurosyn Agent! Type your message or /help for commands."
   goodbye: "Synapse closed. Signal fading."
   help_header: "(◈) Available Commands"
 
 tool_prefix: "▏"
 
 banner_logo: |
-  [bold #F9B8DC]█⠀⠀⠀█⠀█████⠀█⠀⠀⠀█⠀████⠀⠀⠀███⠀⠀⠀████⠀█⠀⠀⠀█⠀█⠀⠀⠀█[/]
-  [bold #F9B8DC]██⠀⠀█⠀█⠀⠀⠀⠀⠀█⠀⠀⠀█⠀█⠀⠀⠀█⠀█⠀⠀⠀█⠀█⠀⠀⠀⠀⠀⠀█⠀█⠀⠀██⠀⠀█[/]
-  [bold #F9B8DC]█⠀█⠀█⠀████⠀⠀█⠀⠀⠀█⠀████⠀⠀█⠀⠀⠀█⠀⠀███⠀⠀⠀⠀█⠀⠀⠀█⠀█⠀█[/]
-  [bold #E86BB0]█⠀⠀██⠀█⠀⠀⠀⠀⠀█⠀⠀⠀█⠀█⠀⠀█⠀⠀█⠀⠀⠀█⠀⠀⠀⠀⠀█⠀⠀⠀█⠀⠀⠀█⠀⠀██[/]
-  [bold #F9B8DC]█⠀⠀⠀█⠀█████⠀⠀███⠀⠀█⠀⠀⠀█⠀⠀███⠀⠀████⠀⠀⠀⠀█⠀⠀⠀█⠀⠀⠀█[/]
+
 
 banner_hero: |
-  [#C211BF]⢀[/][#E0DBF0]⣀[/]
-  [#450327]⢀[/][#E0DBF0]⣀[/][#450327]⢀[/][#E0DBF0]⣤⢠⣦[/][#BD3DDF]⠈[/][#E0DBF0]⠋[/][#B889DD]⢢[/][#450327]⡀[/][#E0DBF0]⡿[/][#B889DD]⠆[/]
-  [#E0DBF0]⠘⠛[/][#B889DD]⠳⣄[/][#CABBE2]⡿[/][#E0DBF0]⣤[/][#C211BF]⡀[/][#E0DBF0]⣤⣤[/][#B889DD]⣄[/][#BD3DDF]⡀[/][#CABBE2]⢸⢸[/][#B889DD]⡧⠖⠁[/][#E0DBF0]⣀[/]
-  [#CABBE2]⢸⠚[/][#450327]⠁[/][#E0DBF0]⠸⢷⠉[/][#B889DD]⡇[/][#BD3DDF]⢈[/][#E0DBF0]⣤[/][#C211BF]⡄[/][#B889DD]⠙[/][#E0DBF0]⣏[/][#B889DD]⡀[/][#CABBE2]⢾[/][#BD3DDF]⠈[/][#E0DBF0]⢻[/]
-  [#E0DBF0]⣶[/][#CABBE2]⣄[/][#BD3DDF]⡀[/][#B889DD]⠘[/][#CABBE2]⣧[/][#E0DBF0]⣶[/][#BD3DDF]⠖⠶[/][#B889DD]⣼[/][#450327]⠃[/][#B889DD]⡴⠓[/][#E0DBF0]⠛⠛[/][#B889DD]⢦[/][#E0DBF0]⣹⠳[/][#CABBE2]⣄⢸[/][#450327]⠄[/][#BD3DDF]⢀[/][#B889DD]⡴⣯[/][#C211BF]⣠[/][#E0DBF0]⠾⠆[/]
-  [#E0DBF0]⣾[/][#B889DD]⣿[/][#CABBE2]⡆[/][#C211BF]⣀⣀[/][#CABBE2]⢸⡇⠈⠳⢤[/][#B889DD]⡀[/][#CABBE2]⢰⡇[/][#C211BF]⢸[/][#CABBE2]⡟[/][#B889DD]⠁[/][#CABBE2]⣼⣷⣶[/][#E0DBF0]⣾⡗[/][#CABBE2]⣠⠟[/]
-  [#E0DBF0]⡾[/][#B889DD]⣅[/][#CABBE2]⡇⠉⠉⠉⠉⠉[/][#E0DBF0]⢹[/][#CABBE2]⠇[/][#C211BF]⢀[/][#E0DBF0]⣽[/][#CABBE2]⠟⢧[/][#860769]⢀[/][#CABBE2]⣠⣿[/][#E0DBF0]⣿⣿[/][#CABBE2]⣿⣿⣉[/]
-  [#E0DBF0]⠘[/][#CABBE2]⢦[/][#E0DBF0]⣄⢺[/][#860769]⡀[/][#CABBE2]⢠[/][#E0DBF0]⡟[/][#450327]⠁[/][#C211BF]⢀[/][#CABBE2]⣸[/][#E0DBF0]⣿⣿⣿⣿⣿[/][#CABBE2]⣿⣿[/][#E0DBF0]⠟[/][#B889DD]⠁[/]
-  [#E0DBF0]⣤[/][#450327]⡀[/][#CABBE2]⢈[/][#E0DBF0]⣳[/][#CABBE2]⡄[/][#E0DBF0]⠸⣧[/][#450327]⡀[/][#E0DBF0]⢸[/][#C211BF]⡇[/][#E0DBF0]⣠⡶⠛⠉⣹⡟[/][#B889DD]⠉⠛⠋⠁[/]
-  [#E0DBF0]⣤[/][#CABBE2]⣤[/][#E0DBF0]⣟⠋[/][#C211BF]⠉[/][#E0DBF0]⢷[/][#BD3DDF]⡀[/][#E0DBF0]⠘⠷⣦[/][#CABBE2]⣀[/][#B889DD]⣀[/][#CABBE2]⣸[/][#E0DBF0]⣧⣼⠏⣰⡟[/][#C211BF]⠁[/]
-  [#B889DD]⠁[/][#BD3DDF]⠈⠙[/][#B889DD]⢲⣌[/][#E0DBF0]⠻⢦⣄⣀[/][#CABBE2]⣀[/][#B889DD]⣈[/][#E0DBF0]⣿⣿[/][#CABBE2]⣿[/][#E0DBF0]⣿[/][#CABBE2]⣿[/][#E0DBF0]⣾⠏[/][#CABBE2]⣀[/][#E0DBF0]⣠⡾⠟[/][#450327]⠁[/]
-  [#E0DBF0]⣀[/][#BD3DDF]⣀⣀[/][#B889DD]⡰[/][#BD3DDF]⠋[/][#B889DD]⠈[/][#CABBE2]⠳⣤⣬⣭[/][#E0DBF0]⣭⣿[/][#CABBE2]⣿⣿[/][#E0DBF0]⣿⣿[/][#CABBE2]⣿⣿[/][#E0DBF0]⣾⡛⠋[/][#450327]⠁[/]
-  [#E0DBF0]⠋[/][#B889DD]⢰[/][#BD3DDF]⡋[/][#B889DD]⣰[/][#CABBE2]⣿⣿⣿[/][#E0DBF0]⣿⣿[/][#CABBE2]⣿⣿⣿[/][#B889DD]⣿[/]
-  [#E0DBF0]⠙⠃[/][#B889DD]⠙[/][#CABBE2]⢿⣿⣿⣿⣿⡿⠿⠟[/][#B889DD]⠋[/]
-  [#B889DD]⠉⠉⠁[/]
+  [#A78BFA]⣀[/][#F9B8DC]⡀[/]
+  [#E86BB0]⢀[/][#F9B8DC]⡀[/]  [#A78BFA]⢠[/][#A78BFA]⣤[/]               [#A78BFA]⣴[/][#B03A8C]⡄[/]  [#A78BFA]⠙[/][#A78BFA]⠳[/][#E86BB0]⡄[/] [#A78BFA]⢸[/][#A78BFA]⠗[/]
+  [#A78BFA]⠘[/][#A78BFA]⠛[/][#F9B8DC]⠲[/][#F9B8DC]⡄[/][#6B1F5C]⢀[/][#F9B8DC]⡏[/]       [#B03A8C]⢀[/][#A78BFA]⣤[/]  [#A78BFA]⢠[/][#A78BFA]⣤[/][#6B1F5C]⣤[/][#F9B8DC]⣀[/][#6B1F5C]⠈[/][#F9B8DC]⡇[/]    [#F9B8DC]⣿[/][#F9B8DC]⠴[/][#F9B8DC]⠋[/] [#A78BFA]⣀[/][#B03A8C]⡀[/]
+  [#F9B8DC]⣿[/][#F9B8DC]⠋[/]   [#A78BFA]⠺[/][#A78BFA]⣇[/]    [#A78BFA]⠙[/][#E86BB0]⡆[/][#E86BB0]⢠[/][#A78BFA]⣤[/][#B03A8C]⠁[/] [#A78BFA]⣈[/][#F9B8DC]⢿[/][#6B1F5C]⡁[/]   [#B03A8C]⢸[/][#E86BB0]⡇[/]   [#A78BFA]⢻[/][#A78BFA]⡇[/]
+  [#2A0F2E]⠠[/][#A78BFA]⣶[/][#F9B8DC]⣄[/][#6B1F5C]⡀[/]    [#A78BFA]⠸[/][#F9B8DC]⣆[/][#B03A8C]⠠[/][#A78BFA]⣶[/][#E86BB0]⠒[/][#F9B8DC]⠦[/][#F9B8DC]⡼[/]    [#F9B8DC]⡼[/][#E86BB0]⠓[/][#A78BFA]⠛[/][#A78BFA]⠓[/][#F9B8DC]⢆[/] [#A78BFA]⡿[/][#2A0F2E]⠉[/][#F9B8DC]⠛[/][#F9B8DC]⢦[/][#E86BB0]⡀[/] [#2A0F2E]⠈[/][#F9B8DC]⡇[/]  [#E86BB0]⣠[/][#F9B8DC]⢾[/][#B03A8C]⣁[/][#A78BFA]⡼[/][#A78BFA]⠷[/]
+  [#B03A8C]⠰[/][#A78BFA]⣷[/][#F9B8DC]⣹[/][#6B1F5C]⡀[/] [#2A0F2E]⢀[/][#B03A8C]⣀[/][#B03A8C]⣀[/][#A78BFA]⢹[/][#B03A8C]⡄[/]   [#E86BB0]⠙[/][#F9B8DC]⠶[/][#F9B8DC]⣄[/][#6B1F5C]⡀[/][#F9B8DC]⣸[/][#B03A8C]⠃[/]   [#F9B8DC]⢸[/][#F9B8DC]⠚[/][#6B1F5C]⠁[/]  [#F9B8DC]⢠[/][#F9B8DC]⣿[/][#A78BFA]⣾[/][#A78BFA]⣿[/][#F9B8DC]⡇[/][#B03A8C]⢀[/][#F9B8DC]⡼[/][#B03A8C]⠁[/]
+  [#A78BFA]⣶[/][#A78BFA]⣶[/][#F9B8DC]⣯[/][#F9B8DC]⣹[/][#B03A8C]⠏[/][#A78BFA]⠉[/][#A78BFA]⠉[/][#A78BFA]⠉[/][#F9B8DC]⠉[/][#A78BFA]⠉[/][#A78BFA]⣿[/][#6B1F5C]⠃[/]     [#F9B8DC]⢈[/][#F9B8DC]⡿[/][#F9B8DC]⠋[/]    [#E86BB0]⠘[/][#F9B8DC]⣧[/]  [#E86BB0]⣀[/][#A78BFA]⣼[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣏[/]
+  [#F9B8DC]⠙[/][#F9B8DC]⢦[/][#A78BFA]⣀[/]    [#A78BFA]⣿[/]     [#A78BFA]⢰[/][#A78BFA]⠏[/]      [#B03A8C]⣀[/][#A78BFA]⣸[/][#A78BFA]⣀[/][#A78BFA]⣼[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#F9B8DC]⡿[/]
+  [#F9B8DC]⢠[/][#A78BFA]⣦[/] [#A78BFA]⣉[/][#A78BFA]⣷[/][#6B1F5C]⡀[/]  [#A78BFA]⠹[/][#A78BFA]⣆[/]    [#A78BFA]⣿[/]    [#A78BFA]⣤[/][#A78BFA]⠞[/][#A78BFA]⠛[/][#A78BFA]⠉[/][#E86BB0]⠉[/][#A78BFA]⣹[/][#A78BFA]⡟[/] [#E86BB0]⠉[/][#F9B8DC]⠙[/][#F9B8DC]⠋[/][#F9B8DC]⠁[/]
+  [#F9B8DC]⠒[/][#A78BFA]⣦[/][#A78BFA]⣤[/][#A78BFA]⣬[/][#A78BFA]⡟[/][#A78BFA]⠉[/][#F9B8DC]⠙[/][#A78BFA]⣧[/]   [#A78BFA]⠙[/][#A78BFA]⢷[/][#A78BFA]⣤[/][#E86BB0]⣀[/][#F9B8DC]⣀[/][#A78BFA]⣸[/][#A78BFA]⣇[/] [#2A0F2E]⢀[/][#A78BFA]⣾[/][#A78BFA]⠃[/]  [#6B1F5C]⢀[/][#A78BFA]⣼[/][#A78BFA]⡟[/]
+  [#F9B8DC]⣴[/][#A78BFA]⠉[/][#2A0F2E]⠁[/] [#E86BB0]⠉[/][#B03A8C]⠛[/][#F9B8DC]⢲[/][#F9B8DC]⣌[/][#A78BFA]⠳[/][#A78BFA]⣦[/][#A78BFA]⣄[/][#A78BFA]⣀[/][#F9B8DC]⣀[/][#A78BFA]⣹[/][#A78BFA]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#A78BFA]⣿[/][#F9B8DC]⣿[/][#A78BFA]⣾[/][#A78BFA]⠇[/][#F9B8DC]⣀[/][#A78BFA]⣠[/][#A78BFA]⣴[/][#A78BFA]⠿[/][#A78BFA]⠉[/]
+  [#A78BFA]⠛[/][#A78BFA]⢀[/][#A78BFA]⣀[/][#E86BB0]⣀[/][#B03A8C]⣀[/][#E86BB0]⡴[/][#F9B8DC]⠋[/][#F9B8DC]⠘[/][#F9B8DC]⠷[/][#F9B8DC]⣤[/][#F9B8DC]⣬[/][#A78BFA]⣭[/][#A78BFA]⣭[/][#A78BFA]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#A78BFA]⣟[/][#A78BFA]⠛[/][#A78BFA]⠋[/][#B03A8C]⠁[/]
+  [#A78BFA]⠘[/][#A78BFA]⠋[/][#E86BB0]⣰[/][#E86BB0]⠉[/]       [#F9B8DC]⣼[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#A78BFA]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣷[/]
+  [#A78BFA]⠛[/][#F9B8DC]⠃[/]       [#F9B8DC]⠻[/][#F9B8DC]⢿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⣿[/][#F9B8DC]⡿[/][#F9B8DC]⠿[/][#F9B8DC]⠟[/][#F9B8DC]⠋[/]
+  [#E86BB0]⠉[/][#F9B8DC]⠉[/][#E86BB0]⠁[/]
